@@ -1,0 +1,112 @@
+{
+	"title": "Patch Notifier (com.alectrona.patch-notifier)",
+	"description": "Settings for Patch Notifier",
+    "__preferencedomain": "com.alectrona.patch-notifier",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://patchdocs.alectrona.com/docs/patch-notifier/#patch-notifier-custom-branding-settings"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+	"properties": {
+        "DialogDescription": {
+            "title": "Text description displayed in the Update Dialog",
+            "description": "The text description displayed in the Update Dialog",
+            "property_order": 5,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "UpdateButtonLabel": {
+            "title": "Label of the Update button",
+            "description": "The text label that is displayed in the update button (default is “Update”)",
+            "property_order": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DeferButtonLabel": {
+            "title": "Label of the Deferral button",
+            "description": "The text label that is displayed in the deferral button (default is “Later”)",
+            "property_order": 15,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ContentImagePath": {
+            "title": "Content Image path",
+            "description": "Local path of an image to be displayed as an alternative to the App’s icon (PNG/TIFF/GIF/JPG)",
+            "property_order": 20,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DialogTimeout": {
+            "title": "Custom Update Dialog timeout",
+            "description": "The amount of time (in seconds) that the Update Dialog will be displayed before a timeout occurs (default is 600 seconds)",
+            "property_order": 25,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "DialogHelpText": {
+            "title": "Enable the Help button and display text",
+            "description": "Enable the Help button and display text to give end-users more information",
+            "property_order": 30,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DialogHelpToolTip": {
+            "title": "On-hover tooltip for the Help button",
+            "description": "Display an on-hover tooltip for the Help button (available when DialogHelpText is configured)",
+            "property_order": 35,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DialogTitle": {
+            "title": "Title of the Update Dialog",
+            "description": "Specify a title for the Update Dialog (by default this isn’t shown)",
+            "property_order": 40,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+	}
+}
