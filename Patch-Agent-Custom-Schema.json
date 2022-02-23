@@ -1,0 +1,82 @@
+{
+	"title": "Patch Agent (com.alectrona.patch-agent)",
+	"description": "Settings for Patch Agent",
+    "__preferencedomain": "com.alectrona.patch-agent",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+	"properties": {
+        "RunInterval": {
+            "title": "Run Interval",
+            "description": "The Patch Agent runs every 4 hours by default. You can adjust this interval time for your environment. Note: This key is configured in seconds. The minimum setting is 600 seconds (10 minutes) and there is currently no maximum.",
+            "property_order": 5,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "ActiveIntervals": {
+            "title": "Active Intervals",
+            "description": "The Patch Agent will attempt to silently update any recently deferred app that exists in the InstallOrUpdate or UpdateOnly keys immediately after that app has been terminated by the user (even during an interval period). You can disable this behavior by setting to false.",
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#active-intervals"
+                }
+            ],
+            "property_order": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ReconAfterInstall": {
+            "title": "Recon after installs",
+            "description": "Set to true to perform a Jamf Pro inventory update after a software title is installed or updated using the Patch Agent.",
+            "property_order": 15,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DeferIfRunning": {
+            "title": "Defer if Running",
+            "description": "If an app is running and an update occurs, setting this key to true will suppress the update dialog and will automatically perform a deferral.",
+            "property_order": 20,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "UpdateMAS": {
+            "title": "Update Mac App Store apps",
+            "description": "Set to true to attempt to update and convert Mac App Store (MAS) apps to their non-MAS counterpart.",
+            "property_order": 25,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+	}
+}
