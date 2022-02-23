@@ -8,6 +8,7 @@
 
 uuid=$(/usr/bin/uuidgen)
 workDir="/private/tmp/$uuid"
+unset version
 
 function clean_up () {
     echo "Cleaning up installation files..."
@@ -31,6 +32,15 @@ fi
 if ! /usr/sbin/installer -pkg "$workDir/alectrona-patch.pkg" -target / ; then
     echo "Failed to install the pkg; exiting."
     exit 2
+fi
+
+# Exit if we can't determine the version of patch
+version=$(/usr/local/bin/patch --version 2> /dev/null)
+if [[ -n "$version" ]]; then
+    echo "Successfully installed Alectrona Patch version $version."
+else
+    echo "Failed to successfully install Alectrona Patch; exiting."
+    exit 3
 fi
 
 exit 0
