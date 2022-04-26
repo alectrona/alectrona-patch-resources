@@ -4,6 +4,8 @@
 
 # A script to Install or Update a software title with Alectrona Patch with an MDM that doesn't have a local binary, like Mosyle Business or Meraki Systems Manager.
 
+# Script compiled by @hkystar35 from combo of Alectrona Patch scripts to use in agnostic MDM setup
+
 softwareID=""        # The Software ID of the application
 options=""              # The various command line arguments (--force|--update-only|--silent etc.)
 ignorePatchErrors="false" # Ignore Patch Errors (true|false)
