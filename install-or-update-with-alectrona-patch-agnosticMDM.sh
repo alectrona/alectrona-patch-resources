@@ -4,7 +4,7 @@
 
 # A script to Install or Update a software title with Alectrona Patch with an MDM that doesn't have a local binary, like Mosyle Business or Meraki Systems Manager.
 
-softwareID="dockutil"        # The Software ID of the application
+softwareID=""        # The Software ID of the application
 options=""              # The various command line arguments (--force|--update-only|--silent etc.)
 ignorePatchErrors="false" # Ignore Patch Errors (true|false)
 
