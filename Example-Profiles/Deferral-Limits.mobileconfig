@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.alectrona.patch-notifier</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>DeferralLimit</key>
+								<integer>5</integer>
+								<key>DeferralLimitExceptions</key>
+								<dict>
+									<key>mozilla-firefox</key>
+									<integer>0</integer>
+									<key>zoom-us</key>
+									<integer>10</integer>
+								</dict>
+								<key>FinalDialogTimeout</key>
+								<integer>30</integer>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Patch Notifier - Deferral Limits Example</string>
+			<key>PayloadIdentifier</key>
+			<string>0FD06781-00B0-4A99-A471-A71876D6468F</string>
+			<key>PayloadOrganization</key>
+			<string>Alectrona LLC</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>0FD06781-00B0-4A99-A471-A71876D6468F</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string></string>
+	<key>PayloadDisplayName</key>
+	<string>Patch Notifier - Deferral Limits Example</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>4D45400E-15E4-4764-80D3-C80E84840009</string>
+	<key>PayloadOrganization</key>
+	<string>Alectrona LLC</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>4D45400E-15E4-4764-80D3-C80E84840009</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

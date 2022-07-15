@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.alectrona.patch-agent</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>InstallOrUpdate</key>
+								<array>
+									<string>slack</string>
+									<string>zoom-us</string>
+								</array>
+								<key>RunInterval</key>
+								<integer>3600</integer>
+								<key>UpdateOnly</key>
+								<array>
+									<string>signal</string>
+									<string>spotify</string>
+									<string>visual-studio-code</string>
+								</array>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Patch Agent Configuration - Example</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>CE9677E1-7921-4E10-9F9A-6D12B20B6386</string>
+			<key>PayloadOrganization</key>
+			<string>Alectrona LLC</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>CE9677E1-7921-4E10-9F9A-6D12B20B6386</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Patch Agent Configuration - Example</string>
+	<key>PayloadDisplayName</key>
+	<string>Patch Agent Configuration - Example</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>00079A21-F0F3-447A-9908-7E1C93212D7F</string>
+	<key>PayloadOrganization</key>
+	<string>Alectrona LLC</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>00079A21-F0F3-447A-9908-7E1C93212D7F</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

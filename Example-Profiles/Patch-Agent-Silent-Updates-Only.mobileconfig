@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.alectrona.patch-agent</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>DeferIfRunning</key>
+								<true/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>CE9677E1-7921-4E10-9F9A-6D12B20B6386</string>
+			<key>PayloadOrganization</key>
+			<string>Alectrona LLC</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>CE9677E1-7921-4E10-9F9A-6D12B20B6386</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Alectrona Patch Agent Silent Updates Only Example</string>
+	<key>PayloadDisplayName</key>
+	<string>Alectrona Patch Agent Silent Updates Only Example</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>C8902D3E-5AE9-4310-BDFE-9A0B78613128</string>
+	<key>PayloadOrganization</key>
+	<string>Alectrona LLC</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>C8902D3E-5AE9-4310-BDFE-9A0B78613128</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
