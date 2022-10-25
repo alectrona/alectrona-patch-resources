@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadDescription</key>
+			<string>Grants Alectrona Patch components with Full Disk Access.</string>
+			<key>PayloadDisplayName</key>
+			<string>Alectrona Patch PPPC</string>
+			<key>PayloadIdentifier</key>
+			<string>CC9BBF9E-3D28-4D36-989C-B6A722BDF2D2</string>
+			<key>PayloadOrganization</key>
+			<string>Alectrona LLC</string>
+			<key>PayloadType</key>
+			<string>com.apple.TCC.configuration-profile-policy</string>
+			<key>PayloadUUID</key>
+			<string>4BD5BF39-7829-4439-A156-5623E825FFAC</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Services</key>
+			<dict>
+				<key>SystemPolicyAllFiles</key>
+				<array>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.alectrona.patch" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FHGVDQ8V3Q</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>/Library/Application Support/Alectrona/Patch/patch</string>
+						<key>IdentifierType</key>
+						<string>path</string>
+					</dict>
+					<dict>
+						<key>Allowed</key>
+						<true/>
+						<key>CodeRequirement</key>
+						<string>identifier "com.alectrona.patch-agent" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = FHGVDQ8V3Q</string>
+						<key>Comment</key>
+						<string></string>
+						<key>Identifier</key>
+						<string>/Library/Application Support/Alectrona/Patch/patch-agent</string>
+						<key>IdentifierType</key>
+						<string>path</string>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Grants Alectrona Patch components with Full Disk Access.</string>
+	<key>PayloadDisplayName</key>
+	<string>Alectrona Patch PPPC</string>
+	<key>PayloadIdentifier</key>
+	<string>CC9BBF9E-3D28-4D36-989C-B6A722BDF2D2</string>
+	<key>PayloadOrganization</key>
+	<string>Alectrona LLC</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>1665429B-E6F6-481F-9EA0-C92FD5E2985C</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
