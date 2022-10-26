@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>Service Management - Managed Login Items</string>
+			<key>PayloadIdentifier</key>
+			<string>com.apple.servicemanagement.9E74C1B6-1DB8-45E0-B09D-16FCA4A98255</string>
+			<key>PayloadType</key>
+			<string>com.apple.servicemanagement</string>
+			<key>PayloadUUID</key>
+			<string>89732025-B0E1-4128-A394-502995B94FAD</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Rules</key>
+			<array>
+				<dict>
+					<key>Comment</key>
+					<string>Alectrona Patch Agent</string>
+					<key>RuleType</key>
+					<string>Label</string>
+					<key>RuleValue</key>
+					<string>com.alectrona.patch-agent</string>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Alectrona Patch Notifier</string>
+					<key>RuleType</key>
+					<string>Label</string>
+					<key>RuleValue</key>
+					<string>com.alectrona.patch-notifier-helper</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Enforces Alectrona Patch background items.</string>
+	<key>PayloadDisplayName</key>
+	<string>Alectrona Patch Background Item Management</string>
+	<key>PayloadIdentifier</key>
+	<string>com.apple.servicemanagement.9B2E87B9-A6BB-401B-B035-5277C7507603</string>
+	<key>PayloadOrganization</key>
+	<string>Alectrona LLC</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>9FC84E93-8709-400A-9B0A-A9C7B333691B</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
