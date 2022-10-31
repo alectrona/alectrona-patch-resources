@@ -14,15 +14,13 @@
 	"properties": {
         "License": {
             "title": "License Key",
-            "description": "Your license key provided upon subscription to Alectrona Patch",
+            "default": null,
+            "description": "Your license key provided upon subscription to Alectrona Patch.",
             "property_order": 5,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "string"
-                }
-            ]
+            "type": "string",
+            "options": {
+                "infoText": "Key: License"
+            }
         }
 	}
 }
