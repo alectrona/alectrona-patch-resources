@@ -16,6 +16,9 @@
             "title": "Text description displayed in the Update Dialog",
             "description": "The text description displayed in the Update Dialog",
             "property_order": 5,
+            "options": {
+                "infoText": "Key: DialogDescription"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -28,6 +31,9 @@
             "title": "Label of the Update button",
             "description": "The text label that is displayed in the update button (default is “Update”)",
             "property_order": 10,
+            "options": {
+                "infoText": "Key: UpdateButtonLabel"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -40,6 +46,9 @@
             "title": "Label of the Deferral button",
             "description": "The text label that is displayed in the deferral button (default is “Later”)",
             "property_order": 15,
+            "options": {
+                "infoText": "Key: DeferButtonLabel"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -52,11 +61,14 @@
             "title": "Content Image path",
             "description": "Local path of an image to be displayed as an alternative to the App’s icon (PNG/TIFF/GIF/JPG)",
             "property_order": 20,
+            "options": {
+                "infoText": "Key: ContentImagePath"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
                     "title": "Configured",
-                    "type": "string"
+                    "type": "integer"
                 }
             ]
         },
@@ -64,6 +76,9 @@
             "title": "Custom Update Dialog timeout",
             "description": "The amount of time (in seconds) that the Update Dialog will be displayed before a timeout occurs (default is 600 seconds)",
             "property_order": 25,
+            "options": {
+                "infoText": "Key: DialogTimeout"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -76,6 +91,9 @@
             "title": "Enable the Help button and display text",
             "description": "Enable the Help button and display text to give end-users more information",
             "property_order": 30,
+            "options": {
+                "infoText": "Key: DialogTimeout"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -88,6 +106,9 @@
             "title": "On-hover tooltip for the Help button",
             "description": "Display an on-hover tooltip for the Help button (available when DialogHelpText is configured)",
             "property_order": 35,
+            "options": {
+                "infoText": "Key: DialogHelpToolTip"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
@@ -100,11 +121,125 @@
             "title": "Title of the Update Dialog",
             "description": "Specify a title for the Update Dialog (by default this isn’t shown)",
             "property_order": 40,
+            "options": {
+                "infoText": "Key: DialogTitle"
+            },
             "anyOf": [
                 {"type": "null", "title": "Not Configured"},
                 {
                     "title": "Configured",
                     "type": "string"
+                }
+            ]
+        },
+        "DeferralLimit": {
+            "title": "Global Deferral Limit",
+            "description": "Set a global Deferral Limit for all software.",
+            "property_order": 45,
+            "options": {
+                "infoText": "Key: DeferralLimit"
+            },
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "DeferralLimitExceptions": {
+			"title": "Deferral Limit Exceptions",
+            "description": "Set exceptions to the global Deferral Limit, or irrespective of it.",
+            "property_order": 50,
+            "options": {
+                "infoText": "Key: DeferralLimitExceptions"
+            },
+			"type": "object",
+			"additionalProperties": {
+				"type": "integer",
+				"required": [
+					"deferralLimit"
+				],
+				"properties": {
+					"deferralLimit": {
+						"type": "integer"
+					}
+				}
+			}
+		},
+        "FinalDialogDescription": {
+            "title": "Final Update Dialog Description",
+            "description": "Specify a title for the Update Dialog (by default this isn’t shown)",
+            "property_order": 55,
+            "options": {
+                "infoText": "Key: FinalDialogDescription"
+            },
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DialogDeferralText": {
+            "title": "Update Dialog Deferral Text",
+            "description": "The main description that appears in the Final Update Dialog.",
+            "property_order": 60,
+            "options": {
+                "infoText": "Key: DialogDeferralText"
+            },
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "IgnoreDeferralText": {
+            "title": "Ignore Default Deferral Text",
+            "description": "Setting this key to true would remove the default deferral text in the Update Dialog's description.",
+            "property_order": 65,
+            "options": {
+                "infoText": "Key: IgnoreDeferralText"
+            },
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RecordTimeoutAsDeferral": {
+            "title": "Record Update Dialog Timeouts as Deferrals",
+            "default": null,
+            "description": "When an update dialog timeout occurs, record a deferral rather than taking no action.",
+            "property_order": 70,
+            "options": {
+                "infoText": "Key: RecordTimeoutAsDeferral"
+            },
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "FinalDialogTimeout": {
+            "title": "Final Dialog Timeout",
+            "description": "The duration, in seconds, that the final update dialog will appear on screen before performing an update.",
+            "property_order": 75,
+            "options": {
+                "infoText": "Key: FinalDialogTimeout"
+            },
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
                 }
             ]
         }
