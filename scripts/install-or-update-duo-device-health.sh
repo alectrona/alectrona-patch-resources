@@ -34,10 +34,10 @@ touch /tmp/duo-no-launch
 
 # Install the Duo Device health app with Alectrona Patch
 if [[ "$forceUpdate" == "true" ]]; then
-    /usr/local/bin/patch install -s duo-device-health --unattended --force
+    /usr/local/bin/patch install duo-device-health --unattended --force
     result="$?"
 else
-    /usr/local/bin/patch install -s duo-device-health --unattended
+    /usr/local/bin/patch install duo-device-health --unattended
     result="$?"
 fi
 
