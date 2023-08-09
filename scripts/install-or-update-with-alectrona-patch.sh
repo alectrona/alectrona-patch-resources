@@ -36,7 +36,7 @@ fi
 
 # Run the patch binary with the software ID and options
 # Not quoting the options as we want to word-split
-"$patchCTL" install -s "$softwareID" $options
+"$patchCTL" install "$softwareID" $options
 result="$?"
 
 if [[ "$ignorePatchErrors" == "true" ]]; then

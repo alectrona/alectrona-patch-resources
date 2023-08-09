@@ -9,7 +9,7 @@ loggedInUID=$(/usr/bin/id -u "$loggedInUser" 2>/dev/null)
 exitCode="0"
 
 # Check if Jamf Connect is out of date
-if ! /usr/local/bin/patch compare -s jamf-connect --fail ; then
+if ! /usr/local/bin/patch compare jamf-connect --fail ; then
 
     echo "Jamf Connect is out of date, beginning update."
 
@@ -23,7 +23,7 @@ if ! /usr/local/bin/patch compare -s jamf-connect --fail ; then
     /usr/bin/killall "Jamf Connect" 2>/dev/null
 
     # Update Jamf Connect
-    /usr/local/bin/patch install -s jamf-connect
+    /usr/local/bin/patch install jamf-connect
     exitCode="$?"
 
     # Reload the Jamf Connect LaunchAgent for the user
