@@ -41,11 +41,7 @@ if ! /usr/sbin/installer -pkg "$workDir/alectrona-patch.pkg" -target / ; then
 fi
 
 # Determine the version of patch
-if [[ -e /Library/Application\ Support/Alectrona/Patch/patch ]]; then
-    version=$(/Library/Application\ Support/Alectrona/Patch/patch --version 2> /dev/null)
-else
-    version=$(/usr/local/bin/patch --version 2> /dev/null)
-fi
+version=$(/Library/Application\ Support/Alectrona/Patch/patch --version 2> /dev/null)
 
 # Exit if we can't determine the version of patch
 if [[ -n "$version" ]]; then
