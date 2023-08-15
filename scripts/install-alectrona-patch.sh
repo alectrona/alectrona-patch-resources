@@ -28,10 +28,16 @@ if ! /usr/bin/curl -s -L -f https://software.alectrona.com/patch/releases/alectr
     exit 1
 fi
 
+# Check the pkg code signature
+if ! /usr/sbin/pkgutil --check-signature "$workDir/alectrona-patch.pkg" | /usr/bin/grep -q "Developer ID Installer: Alectrona LLC (FHGVDQ8V3Q)"; then
+    echo "Failed to validate the package code signature; exiting."
+    exit 2
+fi
+
 # Exit if the PKG errored during install
 if ! /usr/sbin/installer -pkg "$workDir/alectrona-patch.pkg" -target / ; then
     echo "Failed to install the pkg; exiting."
-    exit 2
+    exit 3
 fi
 
 # Determine the version of patch
@@ -46,7 +52,7 @@ if [[ -n "$version" ]]; then
     echo "Successfully installed Alectrona Patch version $version."
 else
     echo "Failed to successfully install Alectrona Patch; exiting."
-    exit 3
+    exit 4
 fi
 
 exit 0
