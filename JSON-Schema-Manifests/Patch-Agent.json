@@ -77,6 +77,30 @@
                     "type": "boolean"
                 }
             ]
+        },
+        "SkipFirstPatchAgentRun": {
+            "title": "Skip First Patch Agent Run",
+            "description": "Set to true to skip the first install/update that occurs upon agent installation.",
+            "property_order": 30,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemovePatchSymlink": {
+            "title": "Remove Patch Symlink",
+            "description": "Set to true to remove the patch CLT symlink, requiring full agent path for patch commands.",
+            "property_order": 35,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
         }
 	}
 }
