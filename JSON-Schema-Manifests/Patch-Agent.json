@@ -127,7 +127,7 @@
 			]
 		},
 		"ReconAfterInstall": {
-			"title": "Recon after installs",
+			"title": "Recon After Installs",
 			"description": "Set to true to perform a Jamf Pro inventory update after a software title is installed or updated using the Patch Agent.",
 			"property_order": 40,
 			"anyOf": [
