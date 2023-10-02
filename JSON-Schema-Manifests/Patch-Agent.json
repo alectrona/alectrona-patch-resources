@@ -1,106 +1,175 @@
 {
 	"title": "Patch Agent (com.alectrona.patch-agent)",
 	"description": "Settings for Patch Agent",
-    "__preferencedomain": "com.alectrona.patch-agent",
-    "links": [
-        {
-            "rel": "Documentation Link",
-            "href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences"
-        }
-    ],
-    "options": {
-        "remove_empty_properties": true
-    },
+	"__preferencedomain": "com.alectrona.patch-agent",
+	"links": [
+		{
+			"rel": "Documentation Link",
+			"href": "https://patchdocs.alectrona.com/docs/patch-agent/#patch-agent-preferences"
+		}
+	],
+	"options": {
+		"remove_empty_properties": true
+	},
 	"properties": {
-        "RunInterval": {
-            "title": "Run Interval",
-            "description": "The Patch Agent runs every 4 hours by default. You can adjust this interval time for your environment. Note: This key is configured in seconds. The minimum setting is 600 seconds (10 minutes) and there is currently no maximum.",
-            "property_order": 5,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "integer"
-                }
-            ]
-        },
-        "ActiveIntervals": {
-            "title": "Active Intervals",
-            "description": "The Patch Agent will attempt to silently update any recently deferred app that exists in the InstallOrUpdate or UpdateOnly keys immediately after that app has been terminated by the user (even during an interval period). You can disable this behavior by setting to false.",
-            "links": [
-                {
-                    "rel": "More information",
-                    "href": "https://patchdocs.alectrona.com/docs/patch-agent/#active-intervals"
-                }
-            ],
-            "property_order": 10,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "ReconAfterInstall": {
-            "title": "Recon after installs",
-            "description": "Set to true to perform a Jamf Pro inventory update after a software title is installed or updated using the Patch Agent.",
-            "property_order": 15,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "DeferIfRunning": {
-            "title": "Defer if Running",
-            "description": "If an app is running and an update occurs, setting this key to true will suppress the update dialog and will automatically perform a deferral.",
-            "property_order": 20,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "UpdateMAS": {
-            "title": "Update Mac App Store apps",
-            "description": "Set to true to attempt to update and convert Mac App Store (MAS) apps to their non-MAS counterpart.",
-            "property_order": 25,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "SkipFirstPatchAgentRun": {
-            "title": "Skip First Patch Agent Run",
-            "description": "Set to true to skip the first install/update that occurs upon agent installation.",
-            "property_order": 30,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "RemovePatchSymlink": {
-            "title": "Remove Patch Symlink",
-            "description": "Set to true to remove the patch CLT symlink, requiring full agent path for patch commands.",
-            "property_order": 35,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        }
+		"UpdateAll": {
+			"title": "Update All",
+			"description": "Set to true to configure the automatic update every app in the Patch Catalog that is installed and out-of-date. Note: This will ignore apps specified in the UpdateOnly key.",
+			"property_order": 5,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"UpdateAllExclusions": {
+			"title": "Update All Exclusions",
+			"description": "The software titles to exclude from being updated with the Update All feature.",
+			"property_order": 10,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			]
+		},
+		"RunInterval": {
+			"title": "Run Interval",
+			"description": "The Patch Agent runs every 4 hours by default. You can adjust this interval time for your environment. Note: This key is configured in seconds. The minimum setting is 600 seconds (10 minutes) and there is currently no maximum.",
+			"property_order": 15,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer"
+				}
+			]
+		},
+		"SkipFirstPatchAgentRun": {
+			"title": "Skip First Patch Agent Run",
+			"description": "When Alectrona Patch runs for the first time, it performs what is called a \"Patch Agent Run\" where it runs all configured installs/updates. You can skip the first Patch Agent Run by setting this key to true.",
+			"property_order": 20,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"RunOnConstrainedNetworks": {
+			"title": "Run on Constrained/Expensive Networks",
+			"description": "Set to false to pause automatic updates when connected to expensive networks like cellular, personal hotspots, or network interfaces in Low Data Mode.",
+			"property_order": 25,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"ActiveIntervals": {
+			"title": "Active Intervals",
+			"description": "The Patch Agent will attempt to silently update any recently deferred app that exists in the InstallOrUpdate or UpdateOnly keys immediately after that app has been terminated by the user (even during an interval period). You can disable this behavior by setting to false.",
+			"links": [
+				{
+					"rel": "More information",
+					"href": "https://patchdocs.alectrona.com/docs/patch-agent/#active-intervals"
+				}
+			],
+			"property_order": 30,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"RemovePatchSymlink": {
+			"title": "Remove Patch Symlink",
+			"description": "Set to true to remove the symlink located at /usr/local/bin/patch. This will remove patch from the user's $PATH and allows for accessing the built-in BSD patch command without using it's full path. Note: When setting this key to true you will need to access the Patch CLT at it's full path in Terminal or custom scripts.",
+			"property_order": 35,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"ReconAfterInstall": {
+			"title": "Recon After Installs",
+			"description": "Set to true to perform a Jamf Pro inventory update after a software title is installed or updated using the Patch Agent.",
+			"property_order": 40,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"DeferIfRunning": {
+			"title": "Defer if Running",
+			"description": "If an app is running and an update occurs, setting this key to true will suppress the update dialog and will automatically perform a deferral.",
+			"property_order": 45,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"UpdateMAS": {
+			"title": "Update Mac App Store apps",
+			"description": "Set to true to attempt to update and convert Mac App Store (MAS) apps to their non-MAS counterpart. Note: This key only applies to apps you have configured Alectrona Patch to manage updates for using either the InstallOrUpdate or UpdateOnly keys.",
+			"property_order": 50,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		}
 	}
 }
