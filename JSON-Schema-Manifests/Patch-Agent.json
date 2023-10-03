@@ -156,10 +156,40 @@
 				}
 			]
 		},
+		"RespectDND": {
+			"title": "Respect Do Not Disturb",
+			"description": "Set to true to suppress update dialogs for users that have Do Not Disturb (DND) enabled.",
+			"property_order": 50,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"RespectMeetings": {
+			"title": "Respect Meetings",
+			"description": "Set to true to suppress update dialogs for users that are likely in a Zoom, Webex Meetings, or Microsoft Teams meeting.",
+			"property_order": 55,
+			"anyOf": [
+				{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
 		"UpdateMAS": {
 			"title": "Update Mac App Store apps",
 			"description": "Set to true to attempt to update and convert Mac App Store (MAS) apps to their non-MAS counterpart. Note: This key only applies to apps you have configured Alectrona Patch to manage updates for using either the InstallOrUpdate or UpdateOnly keys.",
-			"property_order": 50,
+			"property_order": 60,
 			"anyOf": [
 				{
 					"type": "null",
