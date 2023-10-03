@@ -1,26 +1,26 @@
 {
 	"title": "Patch Command Line Tool (com.alectrona.patch)",
 	"description": "Settings for Patch Command Line Tool",
-    "__preferencedomain": "com.alectrona.patch",
-    "links": [
-        {
-            "rel": "Documentation Link",
-            "href": "https://patchdocs.alectrona.com/docs/patch-clt/#patch-preferences"
-        }
-    ],
-    "options": {
-        "remove_empty_properties": true
-    },
+	"__preferencedomain": "com.alectrona.patch",
+	"links": [
+		{
+			"rel": "Documentation Link",
+			"href": "https://patchdocs.alectrona.com/docs/patch-clt/#patch-preferences"
+		}
+	],
+	"options": {
+		"remove_empty_properties": true
+	},
 	"properties": {
-        "License": {
-            "title": "License Key",
-            "default": null,
-            "description": "Your license key provided upon subscription to Alectrona Patch.",
-            "property_order": 5,
-            "type": "string",
-            "options": {
-                "infoText": "Key: License"
-            }
-        }
+		"License": {
+			"title": "License Key",
+			"default": null,
+			"description": "Your license key provided upon subscription to Alectrona Patch.",
+			"property_order": 5,
+			"type": "string",
+			"options": {
+				"infoText": "Key: License"
+			}
+		}
 	}
 }
