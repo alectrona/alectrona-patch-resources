@@ -10,6 +10,20 @@ uuid=$(/usr/bin/uuidgen)
 workDir="/private/tmp/$uuid"
 unset version
 
+# Proxy variable
+proxyUrl=""
+# Jamf Pro variable for proxyUrl
+if [[ "$4" != "" ]]; then
+    proxyUrl="$4"
+fi
+
+# Set proxy param for curl
+if [[ "$proxyUrl" != "" ]]; then
+    curlProxyUrl="--proxy $proxyUrl"
+else
+    curlProxyUrl=""
+fi
+
 function clean_up () {
     echo "Cleaning up installation files..."
     /bin/rm -Rf "$workDir"
@@ -23,7 +37,7 @@ trap clean_up EXIT
 
 # Exit if there was an error with the curl
 echo "Downloading the installation files..."
-if ! /usr/bin/curl -s -L -f https://software.alectrona.com/patch/releases/alectrona-patch-latest.pkg -o "$workDir/alectrona-patch.pkg" ; then
+if ! /usr/bin/curl $curlProxyUrl -s -L -f https://software.alectrona.com/patch/releases/alectrona-patch-latest.pkg -o "$workDir/alectrona-patch.pkg" ; then
     echo "Error while downloading the installation files; exiting."
     exit 1
 fi
