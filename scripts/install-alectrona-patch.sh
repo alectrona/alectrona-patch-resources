@@ -6,8 +6,10 @@
 
 # Created by Alectrona at https://github.com/alectrona/alectrona-patch-resources
 
+proxyURL="$4"   # If required by your network, set a proxy url for the download
 uuid=$(/usr/bin/uuidgen)
 workDir="/private/tmp/$uuid"
+curlCommand=("/usr/bin/curl" "-sfL")
 unset version
 
 function clean_up () {
@@ -21,9 +23,15 @@ trap clean_up EXIT
 # Make our working directory with our unique UUID generated in the variables section
 /bin/mkdir -p "$workDir"
 
+# Add proxy url if set
+if [[ -n "$proxyURL" ]]; then
+    echo "Setting proxy URL to: $proxyURL"
+    curlCommand+=("--proxy" "$proxyURL")
+fi
+
 # Exit if there was an error with the curl
 echo "Downloading the installation files..."
-if ! /usr/bin/curl -s -L -f https://software.alectrona.com/patch/releases/alectrona-patch-latest.pkg -o "$workDir/alectrona-patch.pkg" ; then
+if ! "${curlCommand[@]}" https://software.alectrona.com/patch/releases/alectrona-patch-latest.pkg -o "$workDir/alectrona-patch.pkg" ; then
     echo "Error while downloading the installation files; exiting."
     exit 1
 fi
