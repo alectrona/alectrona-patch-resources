@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Apps Installed and in the Patch Catalog</displayName>
+<description>This attribute returns all installed apps that exist in the Patch Catalog.</description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash&#13;
+&#13;
+# Apps Installed and in the Patch Catalog&#13;
+&#13;
+# This attribute returns all installed apps that exist in the Patch Catalog&#13;
+&#13;
+# Exit if Alectrona Patch is not installed&#13;
+if [[ ! -e /Library/Application\ Support/Alectrona/Patch/patch ]]; then&#13;
+    exit 1&#13;
+fi&#13;
+&#13;
+# Generate the report and return the result&#13;
+report=$(/Library/Application\ Support/Alectrona/Patch/patch report --installed 2&gt;/dev/null)&#13;
+if [[ -n "$report" ]]; then&#13;
+    echo "&lt;result&gt;$report&lt;/result&gt;"&#13;
+fi&#13;
+&#13;
+exit 0</scriptContentsMac>
+</extensionAttribute>

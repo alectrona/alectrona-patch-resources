@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Alectrona Patch Version</displayName>
+<description>This attribute returns the version of the Patch binary installed.</description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash
+
+# Alectrona Patch Version
+
+# This attribute returns the version of the Patch command line tool installed.
+
+unset version
+
+# Check the version of Alectrona Patch 1.3.0+ or fall back to the 1.2.0 and earlier version check
+if [[ -e /Library/Application\ Support/Alectrona/Patch/patch ]]; then
+    version=$(/Library/Application\ Support/Alectrona/Patch/patch --version 2&gt;/dev/null | /usr/bin/head -1 | /usr/bin/awk '{print $NF}')
+else
+    version=$(/usr/local/bin/patch --version 2&gt;/dev/null | /usr/bin/head -1 | /usr/bin/awk '{print $NF}')
+fi
+
+if [[ -n "$version" ]]; then
+    echo "&lt;result&gt;$version&lt;/result&gt;"
+else
+    echo "&lt;result&gt;Not installed&lt;/result&gt;"
+fi
+
+exit 0</scriptContentsMac>
+</extensionAttribute>
