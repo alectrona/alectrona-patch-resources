@@ -10,6 +10,8 @@ daemonIdentifier="com.alectrona.patch-agent"
 daemonPlist="/Library/LaunchDaemons/${daemonIdentifier}.plist"
 notifierHelperIdentifier="com.alectrona.patch-notifier-helper"
 notifierHelperPlist="/Library/LaunchAgents/${notifierHelperIdentifier}.plist"
+daemonLogIdentifier="com.alectrona.patch-log"
+daemonLogPlist="/Library/LaunchDaemons/${daemonLogIdentifier}.plist"
 
 # Exit if not being run as root
 if [[ "$EUID" -ne 0 ]]; then
@@ -22,6 +24,11 @@ if /bin/launchctl print system | /usr/bin/grep -q "$daemonIdentifier" ; then
     /bin/launchctl bootout system "$daemonPlist"
 fi
 
+# Stop the logging LaunchDaemon if it is running
+if /bin/launchctl print system | /usr/bin/grep -q "$daemonLogIdentifier" ; then
+    /bin/launchctl bootout system "$daemonLogPlist"
+fi
+
 # Unload the LaunchAgent for the currently logged in user
 if [[ -n "$loggedInUser" ]]; then
     if /bin/launchctl print "gui/$loggedInUID" | /usr/bin/grep -q "$notifierHelperIdentifier" ; then
@@ -31,6 +38,7 @@ fi
 
 # Remove the associated files
 /bin/rm "$daemonPlist" 2> /dev/null
+/bin/rm "$daemonLogPlist" 2> /dev/null
 /bin/rm "$notifierHelperPlist" 2> /dev/null
 /bin/rm -f "/usr/local/bin/patch" 2> /dev/null
 /bin/rm -Rf "/Library/Application Support/Alectrona/Patch" 2> /dev/null
