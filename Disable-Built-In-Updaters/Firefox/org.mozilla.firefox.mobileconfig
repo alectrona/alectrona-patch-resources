@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.companyname.908F37D0-6E98-4FE8-A2A3-B57DB844F4CC</string>
+	<key>PayloadUUID</key>
+	<string>9EED586E-2993-4086-A333-3AA9D6CCB6CA</string>
+	<key>PayloadDisplayName</key>
+	<string>Firefox - Disable App Updates</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.0A3B5D6E-3BB0-4BF4-B3AD-F7876625FDD1</string>
+			<key>PayloadUUID</key>
+			<string>224D2528-8753-4D1E-8614-C53E91D06638</string>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>org.mozilla.firefox</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>DisableAppUpdate</key>
+								<true/>
+								<key>EnterprisePoliciesEnabled</key>
+								<true/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+		</dict>
+	</array>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadOrganization</key>
+	<string>Company Name</string>
+	<key>PayloadDescription</key>
+	<string></string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+</dict>
+</plist>

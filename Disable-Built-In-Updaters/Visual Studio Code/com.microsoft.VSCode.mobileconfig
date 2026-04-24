@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.companyname.CA857544-57B0-4ABB-A938-911E7FF6A473</string>
+	<key>PayloadUUID</key>
+	<string>EFD11EBB-BACF-4635-869D-1ED1098A023F</string>
+	<key>PayloadDisplayName</key>
+	<string>Visual Studio Code - Disable Auto Updates</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.A8A726CA-0B9A-40DF-8E76-C9B83A4238B0</string>
+			<key>PayloadUUID</key>
+			<string>19B64B8E-C5B3-49B1-9AE6-F788D0FA2545</string>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.microsoft.VSCode</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>EnableFeedback</key>
+								<false/>
+								<key>TelemetryLevel</key>
+								<string>off</string>
+								<key>UpdateMode</key>
+								<string>none</string>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string></string>
+	<key>PayloadOrganization</key>
+	<string>Company Name</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+</dict>
+</plist>

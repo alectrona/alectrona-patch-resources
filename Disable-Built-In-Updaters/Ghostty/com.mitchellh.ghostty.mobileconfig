@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.companyname.39C9A7C8-1ECB-4A20-8B1C-A51CD4AE1CB5</string>
+	<key>PayloadUUID</key>
+	<string>D436FBCA-06C2-4293-A187-67A3460DC2DF</string>
+	<key>PayloadDisplayName</key>
+	<string>Ghostty - Disable Auto Updates</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.1B7911F6-148F-4B8F-BB36-D60E47890CFF</string>
+			<key>PayloadUUID</key>
+			<string>C30783C7-2D63-41BA-8EEA-73AC465B11EA</string>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.mitchellh.ghostty</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>SUEnableAutomaticChecks</key>
+								<false/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadDescription</key>
+	<string></string>
+	<key>PayloadOrganization</key>
+	<string>Company Name</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+</dict>
+</plist>

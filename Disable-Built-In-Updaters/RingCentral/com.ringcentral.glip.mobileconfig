@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.companyname.56383249-b392-4905-9d2a-03bb65c542ab</string>
+	<key>PayloadUUID</key>
+	<string>34199C86-8A36-4637-82A1-7EDE31C11CEB</string>
+	<key>PayloadDisplayName</key>
+	<string>RingCentral Disable Auto-Updates and Disable Auto Launch</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.D58AABE0-4E02-4503-9708-8D69F51E1FF3</string>
+			<key>PayloadUUID</key>
+			<string>6916DD56-148A-4C8A-93F4-11756943333F</string>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.ringcentral.glip</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>ZAutoUpdate</key>
+								<false/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.2771301D-CA9D-4F06-9105-2D389C18472D</string>
+			<key>PayloadUUID</key>
+			<string>A65BC9C2-1B0F-474C-9D5C-725CE8D96FE1</string>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.ringcentral.glip.pkg</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>disableAutoLaunch</key>
+								<integer>1</integer>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+		</dict>
+	</array>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadOrganization</key>
+	<string>Company Name</string>
+	<key>PayloadDescription</key>
+	<string>Disables Auto-Updates for RingCentral.app</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+</dict>
+</plist>
