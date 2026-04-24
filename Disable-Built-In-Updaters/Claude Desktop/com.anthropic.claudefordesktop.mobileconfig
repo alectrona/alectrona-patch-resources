@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.companyname.8982B801-A47E-4B70-B85C-D5ACFE1F34DD</string>
+	<key>PayloadUUID</key>
+	<string>66F4E423-6736-42A9-88A4-0C0499BEABD4</string>
+	<key>PayloadDisplayName</key>
+	<string>Claude Desktop - Disable Auto-Updates</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.804B4F60-B991-4805-88FA-8F676AED8C8D</string>
+			<key>PayloadUUID</key>
+			<string>49D1F6EC-B82F-4A47-BEF9-FF0B1423877E</string>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.anthropic.claudefordesktop</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>disableAutoUpdates</key>
+								<true/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+		</dict>
+	</array>
+	<key>PayloadOrganization</key>
+	<string>Company Name</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadDescription</key>
+	<string></string>
+</dict>
+</plist>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.yourcompany.e1b75b3f-cae8-4319-9f5e-6a97e21c512e</string>
+	<key>PayloadUUID</key>
+	<string>0E36DC0F-A4C3-4E81-A348-78A6DBB37134</string>
+	<key>PayloadDisplayName</key>
+	<string>Slack Disable Auto-Updates</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.yourcompany.C1A808BD-E5CF-444B-B827-65E385A2C32E</string>
+			<key>PayloadUUID</key>
+			<string>8690268B-3E10-4DC7-AA13-4014CA0C3681</string>
+			<key>PayloadOrganization</key>
+			<string>Your Org</string>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.tinyspeck.slackmacgap</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>AutoUpdate</key>
+								<false/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadEnabled</key>
+			<true/>
+		</dict>
+	</array>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadDescription</key>
+	<string></string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadOrganization</key>
+	<string>Your Org</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+</dict>
+</plist>

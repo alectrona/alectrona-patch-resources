@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.companyname.8da47ccb-293d-4c1c-a349-68e9090dd295</string>
+	<key>PayloadUUID</key>
+	<string>7450C1B0-29A9-4B74-B4D3-E4206225A858</string>
+	<key>PayloadDisplayName</key>
+	<string>Amazon WorkSpaces Disable Auto-Updates</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.5F9C6D7C-9101-49EC-BDCE-A72B2B1731FF</string>
+			<key>PayloadUUID</key>
+			<string>11EEB87C-709D-473B-A4ED-2FEACD61087D</string>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.amazon.workspaces</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>SUEnableAutomaticChecks</key>
+								<false/>
+								<key>SUScheduledCheckInterval</key>
+								<integer>0</integer>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+		</dict>
+	</array>
+	<key>PayloadOrganization</key>
+	<string>Company Name</string>
+	<key>PayloadDescription</key>
+	<string></string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadEnabled</key>
+	<true/>
+</dict>
+</plist>
