@@ -2,48 +2,56 @@
 <displayName>Apps With Available Updates</displayName>
 <description>This attribute returns all installed apps that are updatable (out-of-date) using Alectrona Patch.</description>
 <dataType>string</dataType>
-<scriptContentsMac>#!/bin/bash&#13;
-&#13;
-# Apps With Available Updates&#13;
-&#13;
-# This attribute returns all installed apps that are updatable (out-of-date) using Alectrona Patch.&#13;
-&#13;
-# Exit if Alectrona Patch is not installed&#13;
-if [[ ! -e /Library/Application\ Support/Alectrona/Patch/patch ]]; then&#13;
-	exit 1&#13;
-fi&#13;
-&#13;
-# Generate the report&#13;
-report=$(/Library/Application\ Support/Alectrona/Patch/patch report --updatable 2&gt;/dev/null)&#13;
-if [[ -z "$report" ]]; then&#13;
-	echo "&lt;result&gt;No updatable apps&lt;/result&gt;"&#13;
-	exit 0&#13;
-fi&#13;
-&#13;
-# Get the length of the appInventory array&#13;
-length=$(echo "$report" | /usr/bin/plutil -extract appInventory raw -o - -)&#13;
-updatableApps=()&#13;
-&#13;
-if [[ "$length" -eq 0 ]]; then&#13;
-	echo "&lt;result&gt;No updatable apps&lt;/result&gt;"&#13;
-	exit 0&#13;
-fi&#13;
-&#13;
-# Loop through the appInventory array and build the result&#13;
-for ((index=0; index&lt;length; index++)); do&#13;
-	appID=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.id raw -o - -)&#13;
-	installedVersion=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.version raw -o - -)&#13;
-	targetVersion=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.targetVersion raw -o - -)&#13;
-&#13;
-	# Add the app to the array&#13;
-	updatableApps+=("ID: $appID\nInstalled Version: $installedVersion\nAvailable Version: $targetVersion\n")&#13;
-done&#13;
-&#13;
-# Join array elements with newlines&#13;
-result=$(printf "%s\n" "${updatableApps[@]}")&#13;
-&#13;
-# Return the result&#13;
-echo -e "&lt;result&gt;$result&lt;/result&gt;"&#13;
-&#13;
+<scriptContentsMac>#!/bin/bash
+
+# Apps With Available Updates
+#
+# This attribute returns all installed apps that are updatable (out-of-date) using Alectrona Patch.
+#
+# Exit if Alectrona Patch is not installed
+if [[ ! -e /Library/Application\ Support/Alectrona/Patch/patch ]]; then
+	exit 1
+fi
+
+# Generate the report
+report=$(/Library/Application\ Support/Alectrona/Patch/patch report --updatable 2&gt;/dev/null)
+if [[ -z "$report" ]]; then
+	echo "&lt;result&gt;No updatable apps&lt;/result&gt;"
+	exit 0
+fi
+
+# Get the length of the appInventory array
+length=$(echo "$report" | /usr/bin/plutil -extract appInventory raw -o - -)
+updatableApps=()
+
+if [[ "$length" -eq 0 ]]; then
+	echo "&lt;result&gt;No updatable apps&lt;/result&gt;"
+	exit 0
+fi
+
+# Loop through the appInventory array and build the result
+for ((index=0; index&lt;length; index++)); do
+	appID=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.id raw -o - -) || continue
+	installedVersion=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.version raw -o - -) || continue
+	targetVersion=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.targetVersion raw -o - -) || continue
+	deferralLimit=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.deferralLimit raw -o - -) || continue
+	deferralCount=$(echo "$report" | /usr/bin/plutil -extract appInventory.$index.deferralCount raw -o - - 2&gt;/dev/null) || deferralCount=0
+	deferralsRemaining=$(( deferralLimit - deferralCount ))
+
+	# Add the app to the array
+	updatableApps+=("ID: $appID"$'\n'"Installed Version: $installedVersion"$'\n'"Available Version: $targetVersion"$'\n'"Deferrals Remaining: $deferralsRemaining"$'\n')
+done
+
+# Join array elements with newlines
+if [[ "${#updatableApps[@]}" -eq 0 ]]; then
+	echo "&lt;result&gt;No updatable apps&lt;/result&gt;"
+	exit 0
+fi
+
+result=$(printf "%s\n" "${updatableApps[@]}")
+
+# Return the result
+printf "&lt;result&gt;%b&lt;/result&gt;\n" "$result"
+
 exit 0</scriptContentsMac>
 </extensionAttribute>

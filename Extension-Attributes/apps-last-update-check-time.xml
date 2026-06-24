@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Apps Last Update Check Time</displayName>
+<description>This attribute returns the last time Alectrona Patch ran an update check.</description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash
+
+# Last Update Check
+#
+# This attribute returns the last time Alectrona Patch ran an update check.
+#
+# Exit if Alectrona Patch is not installed
+if [[ ! -e /Library/Application\ Support/Alectrona/Patch/patch ]]; then
+	exit 1
+fi
+
+# Generate the report
+report=$(/Library/Application\ Support/Alectrona/Patch/patch report --updatable 2&gt;/dev/null)
+if [[ -z "$report" ]]; then
+	echo "&lt;result&gt;No report available&lt;/result&gt;"
+	exit 0
+fi
+
+# Extract the last update check timestamp
+lastCheck=$(echo "$report" | /usr/bin/plutil -extract patchInfo.lastUpdateTaskRun raw -o - -) || {
+	echo "&lt;result&gt;Unknown&lt;/result&gt;"
+	exit 0
+}
+
+epoch=$(date -j -u -f "%Y-%m-%dT%H:%M:%SZ" "$lastCheck" "+%s")
+localTime=$(date -r "$epoch" "+%Y-%m-%d %H:%M:%S %Z")
+
+echo "&lt;result&gt;$localTime&lt;/result&gt;"
+
+exit 0</scriptContentsMac>
+</extensionAttribute>
