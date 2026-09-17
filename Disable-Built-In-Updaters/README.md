@@ -21,6 +21,7 @@ Disabling built-in updaters ensures your patch management tooling or internal wo
 | [Claude Desktop](./Claude%20Desktop/) |
 | [Firefox](./Firefox/) |
 | [Ghostty](./Ghostty/) |
+| [Notion](./Notion/) |
 | [RingCentral](./RingCentral/) |
 | [Slack](./Slack/) |
 | [Visual Studio Code](./Visual%20Studio%20Code/) |

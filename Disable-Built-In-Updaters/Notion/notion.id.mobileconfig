@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>com.companyname.7C8554BF-7693-4447-AC51-8D52CF15342F</string>
+	<key>PayloadUUID</key>
+	<string>C13DEF6B-14BE-444F-B961-AA86E2929EA6</string>
+	<key>PayloadDisplayName</key>
+	<string>Notion - Disable Auto Updates</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.companyname.120B5076-740B-4828-9DDD-F7067BA8A8C0</string>
+			<key>PayloadUUID</key>
+			<string>E56208B7-32E4-4E8C-93D9-70D280C24C43</string>
+			<key>PayloadOrganization</key>
+			<string>Company Name</string>
+			<key>PayloadDisplayName</key>
+			<string>Custom Settings</string>
+			<key>PayloadContent</key>
+			<dict>
+				<key>notion.id</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>NotionNoAutoUpdates</key>
+								<true/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadOrganization</key>
+	<string>Company Name</string>
+	<key>PayloadDescription</key>
+	<string></string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+</dict>
+</plist>
